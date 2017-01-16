@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>SoftwearHouse</title>
+   <link href="css/events.css" type="text/css" rel="stylesheet" >
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+   <script src="includes/validate.js" type="text/javascript"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('customersCtrl', function($scope, $http) {
+        $scope.getDatas = function(){
+            $http.get("http://localhost:9292/nm?colId=25").then(function (response) {
+                $scope.myData = response.data.records;
+            });}
+        $scope.getDatas();
+        $scope.updateDatas = function(){
+            brId=$('select[name=brand]').val()
+            $http.get("http://localhost:9292/nm?brId="+brId).then(function (response) {
+                $scope.myData = response.data.records;
+            });}
+      });
+    </script>
+</head>
+    <body>
+        <div>
+       		<img src="images/softwearLogo.png" id="logo">
+         		<div id="right signin">
+                    <div>
+                    	<span class="element" id="home1"><a href="signin.html">Close Session</a></span>    
+                    </div>
+            	</div>     
+        </div>
+		 <div id="dynamicImg" class=""  ng-app="myApp" ng-controller="customersCtrl">
+			<div id="leftButtons" class="filters">
+				<label for="category">Category: </label>
+				<select id="category" name="category" >
+            <option>First</option>
+            <option>Second</option>
+				</select>
+			</div>
+			<div id="leftButtons" class="filters">
+				<label for="brand">Brand: </label>
+				<select name="brand" >
+        		 <option ng-repeat="x in myData">{{ x.brand.id }}</option>
+				</select>
+			</div>
+			<div id="leftButtons" class="filters">
+				<label for="color">Color: </label>
+				<select name="color" ng-options='id as x.color.id for x in myData' ng-model="selectedItem">
+				</select>
+        <button ng-click="updateDatas()">OK</button>
+			</div>	<br><br>		
+            <div id="right" class="imgDisplay" >
+            	<img ng-repeat="x in myData" src="http://i75.photobucket.com/albums/i307/localoko_310/1826459_zpsb2c34977.jpg" />
+            </div>
+			</div>
+        </div>
+	
+
+    </body>
+	
+</html>

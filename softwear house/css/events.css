@@ -1,0 +1,182 @@
+body{
+	background-color:gray;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:12px;
+	color:white;
+}
+
+a{
+	text-decoration: none;
+	font-size: 16px;
+	border-radius:7px;
+	background-color:#660000;
+	border-color:#660000;
+	border-style:solid;
+	border-width:2px;	
+	color:white;
+	height:35px;
+	margin: 10px 15px 0px 0px;
+}
+
+span{
+	letter-spacing: 1.5px;
+	margin-right:5px;	
+}
+
+#logo{
+	margin-left:20px;
+}
+
+#headerLeft{
+	position:absolute;
+	display: inline-block;
+	margin-left:30px;
+	margin-top:10px;
+	
+}
+
+#headerRight{
+	float:right;
+	display: inline-block;
+	margin-right: 30px;
+	margin-top:10px;
+}
+
+#events{
+	background-color:#CCC;
+	border-radius: 5px;
+}
+
+.element{
+	height:100%;
+	font-size: 16px;
+	padding: 0px 5px 0px 5px;
+	margin-top:5px;
+	border-style: solid;
+    border-width: 0px 0px 0px 1px;
+	border-color:white;
+	letter-spacing:0px;
+	margin:auto;	
+	float: right;
+}
+
+#home{
+	color:white;
+	background-color:rgb(153,153,153);
+	border-radius:2px;
+	border-style: solid;
+    border-width: 0px 0px 0px 1px;
+	border-color:rgb(183,183,183);
+	float: right;
+}
+#home1{
+	color:white;
+	
+	border-radius:2px;
+	border-style: solid;
+    border-width: 0px 0px 0px 1px;
+	border-color:rgb(183,183,183);
+	float: right;
+}
+
+.event{
+	width:400px;
+	height: 330px;
+	background-color:white;
+	margin:10px 8px 10px 9px;
+	border-radius: 5px;
+	position:relative;
+	color:black;
+	display:inline-block;
+}
+
+
+button, input[type=submit], input[type=button], input[type=reset]{
+	font-size: 16px;
+	border-radius:7px;
+	background-color:#660000;
+	border-color:#660000;
+	border-style:solid;
+	border-width:2px;	
+	color:white;
+	height:35px;
+	margin: 10px 15px 0px 0px;
+}
+
+#events input[type=submit]{
+	margin: -35px 20px 0px 0px;;
+}
+
+#rightdiv {
+    float:right;
+    width:50%;
+}
+
+li{
+	color:white;
+	text-decoration:none;	
+}
+
+
+.page{
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+	border-radius:5px;	
+} 
+
+
+h1{
+	text-align:center;
+}
+
+
+.signin{
+	border-style:solid;
+	border-radius:10px;
+	border-color:white;
+	border-width:1.5px;
+	padding:20px;
+	padding-top:0px;
+	position:relative;
+}
+
+#left{
+	float:left;
+	padding-left:10px;
+}
+#leftButtons{
+	float:left;
+	padding-left:10px;
+	width:100%;
+}
+
+#right{
+	float:right;
+}
+
+
+
+
+#right h3{
+	margin:0px;
+	margin-bottom:5px;
+}
+
+.labelConfirm{
+	font-weight:bold;
+	font-size:14px;
+}
+
+
+
+#miniRight{
+	float:right; 
+	width:40%; 
+	display:inline-block; 
+	text-align:center;"
+}
+
+#miniRight h4{
+	font-weight:normal;
+	font-size:18px;
+}

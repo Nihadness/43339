@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>SoftwearHouse</title>
+   <link href="css/events.css" type="text/css" rel="stylesheet" >
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+   <script src="includes/validate.js" type="text/javascript"></script>
+</head>
+    <body>
+        <div>
+       		<img src="images/softwearLogo.png" id="logo">
+         		<div id="right">
+                   
+                    <div>
+                    	<span class="element" id="home1"><a href="signin.html">Close Session</a></span>    
+                    </div>
+            	</div>     
+        </div>
+		 <div id="dynamicImg" class="">
+			
+			<div id="leftButtons" class="filters">
+				<label for="category">Category: </label>
+				<select name="category">
+        
+				</select>
+			</div>
+			<div id="leftButtons" class="filters">
+				<label for="brand">Brand: </label>
+				<select name="brand">
+        
+				</select>
+			</div>
+			<div id="leftButtons" class="filters">
+				<label for="color">Color: </label>
+				<select name="color">
+        
+				</select>
+			</div>
+			
+            <div id="right" class="imgDisplay">
+				<span class="elements"><a href="imageUpload.html">Add Item</a></span>
+			</div>
+        </div>
+	<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<ul>
+  <li ng-repeat="x in myData">
+    {{ x.category }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+var config = {
+	params: {
+		brId: 1,
+		catId: 1,
+		colId: 1
+	}
+};
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("http://localhost:9292/nm?brId=1&catId=1&colId=1", config).then(function (response) {
+      $scope.myData = response.data.records;
+  });
+});
+</script>
+
+    </body>
+	
+</html>

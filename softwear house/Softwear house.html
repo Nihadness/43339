@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.bootcss.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<ul>
+  <li ng-repeat="x in myData">
+    {{ x.category }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+var config = {
+	params: {
+		brId: 1,
+		catId: 1,
+		colId: 1
+	}
+};
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("http://localhost:9292/nm?brId=1&catId=1&colId=1", config).then(function (response) {
+      $scope.myData = response.data.records;
+  });
+});
+</script>
+
+</body>
+</html>
