@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root12</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/softwearhouse</property>
+
+	    <!-- Echo all executed SQL statements -->
+ 		<property name="show_sql">false</property>
+ 
+		 <!-- Enable Hibernate's automatic session context management -->
+ 		<property name="current_session_context_class">thread</property>
+ 		
+ 		<!-- Drop and re-create the database schema on startup -->
+    	<property name="hbm2ddl.auto">update</property>
+    	
+    	<mapping class="com.sqa2014.persistence.entities.Brand"/>
+    	<mapping class="com.sqa2014.persistence.entities.Category"/>
+    	<mapping class="com.sqa2014.persistence.entities.Color"/>
+    	<mapping class="com.sqa2014.persistence.entities.Product"/>
+    	<mapping class="com.sqa2014.persistence.entities.User"/>
+    	
+    </session-factory>
+</hibernate-configuration>
